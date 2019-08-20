@@ -35,8 +35,8 @@
     }
     if (!$error) {
       $subject = '=?UTF-8?B?'.base64_encode($subject).'=?';
-      $headers = 'From: $from\r\nReplay-to: $to\r\nContent-type: text-plain; charset=UTF-8\r\n';
-      mail ($to, $subject, $message, $headers);
+      $headers = 'Content-type: text-plain; charset=UTF-8';
+      mail($to, $subject, $message, $headers);
       header ('Location: success.php?send=1');
       exit;
     }
