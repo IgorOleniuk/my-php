@@ -34,7 +34,7 @@
       $error = true;
     }
     if (!$error) {
-      $subject = '=?UTF-8?B?'.base64_encode($subject).'=?';
+      //$subject = '=?UTF-8?B?'.base64_encode($subject).'=?';
       $headers = 'Content-type: text-plain; charset=UTF-8';
       mail($to, $subject, $message, $headers);
       header ('Location: success.php?send=1');
